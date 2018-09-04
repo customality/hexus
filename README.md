@@ -1,6 +1,7 @@
 # Hexus API Functions
 
 > Functions exclusive to Hexus. They cannot be accessed through Roblox LocalScripts.
+> This list is incomplete and does not include all the functions in Hexus!
 
 ## getrawmetatable
 Gets an object's metatable. Equivalent to getmetatable, except it ignores the __metatable field.
@@ -117,4 +118,22 @@ Similar to setrawmetatable, but works on all value types.
 ```lua
 debug.setmetatable("", {__index = function() return "hi" end})
 print(("").IndexingWithSomeRandomKey)
+```
+
+## debug.setupvalue
+Sets an upvalue for a function
+```lua
+debug.setupvalue(f, "name", "value")
+```
+
+## debug.getupvalue
+Gets an upvalue in a function
+```lua
+print(debug.getupvalue(f, "name"))
+```
+
+## debug.getupvalues
+Returns a table containing all upvalues of the function
+```lua
+table.foreach(debug.getupvalues(f), print)
 ```
